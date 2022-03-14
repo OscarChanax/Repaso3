@@ -97,5 +97,17 @@ namespace Repaso3
             labelMayor1.Text = resumen[ultimo-1].cuota.ToString();
             labelPropietario.Text = resumen[ultimo - 1].nombre +", "+ resumen[ultimo - 1].apellido;
         }
+
+        private void ingresarPropietariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormPropietarios formulariopropietarios = new FormPropietarios();
+            formulariopropietarios.Show();
+        }
+
+        private void ingresarPropiedadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPropiedades formulariopropiedades = new FormPropiedades();
+            formulariopropiedades.Show();
+        }
     }
 }

@@ -52,13 +52,28 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPropiedades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPropiedades.Designer.cs">
+      <DependentUpon>FormPropiedades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Propiedad.cs" />
     <Compile Include="Propietario.cs" />
+    <Compile Include="FormPropietarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPropietarios.Designer.cs">
+      <DependentUpon>FormPropietarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resumen.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPropiedades.resx">
+      <DependentUpon>FormPropiedades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -69,6 +84,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormPropietarios.resx">
+      <DependentUpon>FormPropietarios.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
