@@ -22,7 +22,7 @@ namespace Repaso3
         }
         private void CargarPropietarios()
         {
-            FileStream stream = new FileStream("Propietarios", FileMode.Open, FileAccess.Read);
+            FileStream stream = new FileStream("Propietarios.txt", FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(stream);
 
             while (reader.Peek() > -1)
@@ -37,7 +37,7 @@ namespace Repaso3
         }
         private void CargarPropiedades()
         {
-            FileStream stream = new FileStream("Propiedades", FileMode.Open, FileAccess.Read);
+            FileStream stream = new FileStream("Propiedades.txt", FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(stream);
 
             while (reader.Peek() > -1)
@@ -52,7 +52,10 @@ namespace Repaso3
         }
         private void CargarGrid()
         {
-            dataGridView1
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+            dataGridView1.DataSource = resumen;
+            dataGridView1.Refresh();
         }
         private void buttonMostrar_Click(object sender, EventArgs e)
         {
@@ -74,10 +77,8 @@ namespace Repaso3
                     }
                 }
             }
-            dataGridView1.DataSource = resumen;
-            dataGridView1.Refresh();
-
-            buttonMayorMenor.Enabled = true;
+            CargarGrid();
+            
             buttonOrdenar.Enabled = true;
         }
 
@@ -85,11 +86,12 @@ namespace Repaso3
         {
             resumen = resumen.OrderBy(c => c.cuota).ToList();
             CargarGrid();
+            buttonMayorMenor.Enabled = true;
         }
 
         private void buttonMayorMenor_Click(object sender, EventArgs e)
         {
-            labelMayor1.Text = resumen[0].cuota.ToString();
+            labelMenor1.Text = resumen[0].cuota.ToString();
 
             int ultimo = resumen.Count();
             labelMayor1.Text = resumen[ultimo-1].cuota.ToString();
